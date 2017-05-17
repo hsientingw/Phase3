@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <meta charset="utf-8" />
+    <title>Ajax Demo using jQuery</title>
+    <script src="jquery.js" type="text/javascript"></script>
+    <style type="text/css">
+    
+td {
+  vertical-align: top;
+}
+
+td:first-child {
+  text-align: right;
+}
+
+#expression {
+  width: 600px;
+}
+
+textarea {
+  width: 600px;
+  height: 200px; 
+}
+    
+    </style>
+  </head>
+  <body>
+    <h1>Ajax Demo using jQuery</h1>
+    <form id="ajax-form">
+      <table>
+        <tr>
+          <td><label for="expression">Enter a mathematical expression</label></td>
+          <td>
+			<select id="menu1">
+			  <option>a</option>
+			  <option>b</option>
+			  <option>c</option>
+			  <option>d</option>
+			</select>
+            <select id="menu2">
+			  <option>a</option>
+			  <option>b</option>
+			  <option>c</option>
+			  <option>d</option>
+			</select>
+            <select id="menu3">
+			  <option>a</option>
+			  <option>b</option>
+			  <option>c</option>
+			  <option>d</option>
+			</select>
+            <select id="menu4">
+			  <option>a</option>
+			  <option>b</option>
+			  <option>c</option>
+			  <option>d</option>
+			</select>
+            
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input type="submit" name="evaluate" id="evaluate" value="Evaluate">
+          </td>
+        </tr>
+        <tr>
+          <td>Logs</td>
+          <td>
+            <table id="id-log" name="log"></table>
+          </td>
+        </tr>
+        <tr>
+          <td>Ajax Raw Message</td>
+          <td>
+            <textarea id="id-raw" name="ajax-raw"></textarea>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script type="text/javascript">
+    
+function ajaxRequest(e) {
+  var responseType = 'json';
+  var select1 = $("#menu1 option:selected").text();
+  var select2 = $("#menu2 option:selected").text();
+  var select3 = $("#menu3 option:selected").text();
+  var select4 = $("#menu4 option:selected").text();
+  //var expression = $('input[name=expression]').val();
+  var expression = select1 + " " + select2 + " " + select3 + " " + select4;
+  var requestType = 'application/json';
+  var formData = $('#ajax-form').serializeArray();
+  var requestData = {
+    format: responseType,
+    expression: expression
+  };
+  $.ajax({
+    type: "POST",
+    url: "ajax-handler",
+    contentType: requestType,
+    dataType: responseType, // server will return data in either json or xml
+    data: JSON.stringify(requestData),
+    success: function(responseData) {
+	  console.log("function ran");
+	  var data = responseData;
+	  console.log(data);
+	  temp = "";
+		for(i = 0; i < data.length; i++) {
+			temp+= "<tr><td>" + data[i].id + "</td>";
+			temp+= "<td>" + data[i].name+ "</td>";
+			temp+= "<td>" + data[i].category + "</td>";
+			temp+= "<td>" + data[i].color + "</td></tr>";
+		};
+	  $("#id-log").html(temp);
+      // process result in xml 
+      //expression = $(responseData).find('expression').text();
+      //result = $(responseData).find('result').text();
+      //$('#id-log').prepend(expression + " = " + result + "\n");
+    },
+    complete: function(XMLHttpRequest, textStatus) { // display the raw response 
+      $('#id-raw').val(XMLHttpRequest.responseText)
+    }
+  });
+  e.preventDefault() // prevent HTML form submission (avoid page refresh)
+}
+
+$(document).ready(
+  function docInit() {
+    $('#evaluate').click(ajaxRequest); // call function ajaxRequest upon clicking
+  }
+);
+
+    </script>
+  </body>
+</html>
