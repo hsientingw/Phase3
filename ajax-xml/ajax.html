@@ -2,61 +2,146 @@
 <html lang="en">
   <head>
 	  <meta charset="utf-8" />
-    <title>Ajax Demo using jQuery</title>
+    <title>Pivot Table Generator</title>
     <script src="jquery.js" type="text/javascript"></script>
     <style type="text/css">
     
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
 td {
   vertical-align: top;
 }
 
 td:first-child {
-  text-align: right;
+  text-align: left;
 }
 
 #expression {
   width: 600px;
 }
 
-textarea {
-  width: 600px;
-  height: 200px; 
+table.center {
+    margin-left: auto;
+    margin-right: auto;
 }
+
+div.bins {
+  display:none;
+}
+
     
     </style>
   </head>
   <body>
-    <h1>Ajax Demo using jQuery</h1>
+    <h1>Pivot Table Builder</h1>
+	<h2>Generate your own pivot tables</h2>
     <form id="ajax-form">
-      <table>
+      <table class="center">
         <tr>
-          <td><label for="expression">Enter a mathematical expression</label></td>
-          <td>
-			<select id="menu1">
-			  <option>a</option>
-			  <option>b</option>
-			  <option>c</option>
-			  <option>d</option>
+          <td><h3><label for="expression">Row Headings</label></h3>
+		    Heading:
+		    <br>
+			<select id="row_heading">
+			  <option value="nom">Nationality</option>
+			  <option value="nom">Club Position</option>
+			  <option value="num">Rating</option>
+			  <option value="num">Height</option>
 			</select>
+			<br>
+			Order: (numeric/alphabetic)
+			<br>
             <select id="menu2">
-			  <option>a</option>
-			  <option>b</option>
-			  <option>c</option>
-			  <option>d</option>
+			  <option>Ascending</option>
+			  <option>Descending</option>
 			</select>
+			<br>
+			<div class="bins">
+			Bin size:
+			<br>
             <select id="menu3">
 			  <option>a</option>
 			  <option>b</option>
 			  <option>c</option>
 			  <option>d</option>
 			</select>
+			<br>
+			</div>
+		  </td>
+          <td>
+		    <h3><label for="expression2">Column Headings</label></h3>
+			<br>
             <select id="menu4">
 			  <option>a</option>
 			  <option>b</option>
 			  <option>c</option>
 			  <option>d</option>
 			</select>
-            
+			<br>
+            <select id="menu5">
+			  <option>a</option>
+			  <option>b</option>
+			  <option>c</option>
+			  <option>d</option>
+			</select>
+			<br>
+            <select id="menu6">
+			  <option>a</option>
+			  <option>b</option>
+			  <option>c</option>
+			  <option>d</option>
+			</select>
+			<br>
+          </td>
+        </tr>
+		<tr>
+          <td><h3><label for="expression">Filters</label></h3>
+			League
+			<br>
+			<select id="league">
+			  <option>Everything</option>
+			  <option>English Premier league</option>
+			  <option>League2</option>
+			  <option>League3</option>
+			  <option>League4</option>
+			</select>
+			<br>
+			<select id="menu8">
+			  <option>a</option>
+			  <option>b</option>
+			  <option>c</option>
+			  <option>d</option>
+			</select>
+			<br>
+            <select id="menu9">
+			  <option>=</option>
+			  <option>&lt;</option>
+			  <option>&gt;</option>
+			  <option>&lt;=</option>
+			  <option>&gt;=</option>
+			  <option>includes</option>
+			</select>
+			<br>
+			Filter terms
+            <br>
+			<input name="filter_terms" id="filter_terms">
+			<br>
+		  </td>
+          <td>
+		    <h3><label for="expression2">Output format</label></h3>
+			<br>
+            <select id="menu11">
+			  <option>avaerage</option>
+			  <option>sum</option>
+			  <option>mean</option>
+			  <option>median</option>
+			</select>
+			<br>
           </td>
         </tr>
         <tr>
@@ -83,7 +168,7 @@ textarea {
     
 function ajaxRequest(e) {
   var responseType = 'json';
-  var select1 = $("#menu1 option:selected").text();
+  var select1 = $("#row_heading option:selected").text();
   var select2 = $("#menu2 option:selected").text();
   var select3 = $("#menu3 option:selected").text();
   var select4 = $("#menu4 option:selected").text();
@@ -123,13 +208,23 @@ function ajaxRequest(e) {
     }
   });
   e.preventDefault() // prevent HTML form submission (avoid page refresh)
-}
+};
 
 $(document).ready(
   function docInit() {
     $('#evaluate').click(ajaxRequest); // call function ajaxRequest upon clicking
-  }
-);
+  });
+
+$("#row_heading").on("change",function(){
+    $("div.bins").hide();
+	var val = $("#row_heading option:selected").val();
+	console.log(val);
+	if (val == "num"){
+	  $("div.bins").show();
+	};
+});
+
+
 
     </script>
   </body>
