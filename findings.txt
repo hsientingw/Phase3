@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<title>Interesting Findings</title>
+<head>
+<h1>Interesting Findings from the FIFA dataset</h1>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+<body>
+<tb>
+<tr>
+<h2>interesting facts</h2>
+<h3>Physicality of players is the most important quality</h3>
+<p>Out of the 31 countries qualified for the 2014 Fifa World Cup, 
+a player's physical attribute is the most important quality, it takes into
+account the player's acceleration, speed, stamina, strength, balance, 
+agility and jumping. Overall, it is the most highly ranked among the players.</p>
+<p>Disregarding goalkeeping, defence is actually the weakest quality overall
+of the countries qualified, with a maximum score of only 49.9</p>
+</tr>
+<tr>
+<div id="container" style="height: 400px; margin: auto; min-width: 400px; max-width: 600px"></div>
+</tr>
+</tb>
+<tb>
+<tr>
+<h3>bubble chart</h3>
+<p>ball skills</p>
+</tr>
+<tr>
+<div id="bubble" style="height: 400px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
+</tr>
+</tb>
+<tb>
+<tr>
+<h3>barchart</h3>
+<p>countries vs no of players</p>
+</tr>
+<tr>
+<div id="bar" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+</tr>
+</tb>
+
+<script>
+Highcharts.chart('container', {
+
+    chart: {
+        type: 'boxplot'
+    },
+
+    title: {
+        text: 'Average Ratings of Player skills over Qualified Countries'
+    },
+
+    legend: {
+        enabled: false
+    },
+
+    xAxis: {
+        categories: ['Ball_Skills', 'Defence', 'Mental', 'Passing', 'Physical', 'Shooting', 'Goalkeeper'],
+        title: {
+            text: 'Qualities'
+        }
+    },
+
+    yAxis: {
+        title: {
+            text: 'Ratings'
+        }
+    },
+
+    plotOptions: {
+        boxplot: {
+            fillColor: '#F0F0E0',
+            lineWidth: 2,
+            medianColor: '#0C5DA5',
+            medianWidth: 3,
+            stemColor: '#A63400',
+            stemDashStyle: 'dot',
+            stemWidth: 1,
+            whiskerColor: '#3D9200',
+            whiskerLength: '20%',
+            whiskerWidth: 3
+        }
+    },
+
+    series: [{
+        name: 'Ratings',
+        data: [
+            [50, 56, 58, 60.8, 68],
+            [36, 45, 46.8, 47.9, 49.9],
+            [48.6, 52.7, 54.4, 56.4, 60.6],
+            [48.1, 52.3, 54.5, 56.6, 64.6],
+            [62.3, 63.9, 64.8, 66.5, 71.5],
+            [42, 47, 49.9, 51.9, 58.1],
+            [10.5, 15.4, 16.5, 18.5, 20.3]
+        ]
+    }]
+
+});
+</script>
+<script>
+Highcharts.chart('bubble', {
+
+    chart: {
+        type: 'bubble',
+        plotBorderWidth: 1,
+        zoomType: 'xy'
+    },
+
+    legend: {
+        enabled: false
+    },
+
+    title: {
+        text: 'Ball skills vs Heights vs Weights'
+    },
+
+    subtitle: {
+        text: 'Source: fifaindex'
+    },
+
+    xAxis: {
+        gridLineWidth: 1,
+        title: {
+            text: 'Weights'
+        },
+        labels: {
+            format: '{value} gr'
+        },
+        plotLines: [{
+            color: 'black',
+            dashStyle: 'dot',
+            width: 2,
+            value: 75.6,
+            label: {
+                rotation: 0,
+                y: 15,
+                style: {
+                    fontStyle: 'italic'
+                },
+                text: 'Average weight'
+            },
+            zIndex: 3
+        }]
+    },
+
+    yAxis: {
+        startOnTick: false,
+        endOnTick: false,
+        title: {
+            text: 'Heights'
+        },
+        labels: {
+            format: '{value} gr'
+        },
+        maxPadding: 0.2,
+        plotLines: [{
+            color: 'black',
+            dashStyle: 'dot',
+            width: 2,
+            value: 181.1,
+            label: {
+                align: 'right',
+                style: {
+                    fontStyle: 'italic'
+                },
+                text: 'Average height',
+                x: -10
+            },
+            zIndex: 3
+        }]
+    },
+
+    tooltip: {
+        useHTML: true,
+        headerFormat: '<table>',
+        pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
+            '<tr><th>Weight:</th><td>{point.x}g</td></tr>' +
+            '<tr><th>Height:</th><td>{point.y}g</td></tr>' +
+            '<tr><th>Rating:</th><td>{point.z}%</td></tr>',
+        footerFormat: '</table>',
+        followPointer: true
+    },
+
+    plotOptions: {
+        series: {
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            }
+        }
+    },
+
+    series: [{
+        data: [
+            {x: 74.4, y: 181.4, z: 68, name: 'AL', country: 'Algeria'},
+            {x: 75.3, y: 179.1, z: 57.5, name: 'AR', country: 'Argentina'},
+            {x: 76.2, y: 181.8, z: 50, name: 'AU', country: 'Australia'},
+            {x: 75.6, y: 182.3, z: 58.6, name: 'BE', country: 'Belgium'},
+            {x: 79.3, y: 185.3, z: 60.4, name: 'BO', country: 'Bosnia Herzegovina'},
+            {x: 76.1, y: 181.0, z: 60.7, name: 'BR', country: 'Brazil'},
+            {x: 77.5, y: 182.0, z: 57.9, name: 'CA', country: 'Cameroon'},
+            {x: 73.1, y: 176.3, z: 56.1, name: 'CH', country: 'Chile'},
+            {x: 73.9, y: 178.9, z: 55.6, name: 'CO', country: 'Colombia'},
+            {x: 75.7, y: 180.9, z: 61.7, name: 'CS', country: 'Costa Rica'},
+            {x: 78.5, y: 184.9, z: 58.4, name: 'CR', country: 'Croatia'},
+            {x: 74.5, y: 177.6, z: 61.6, name: 'EC', country: 'Ecuador'},
+            {x: 74.9, y: 181.8, z: 53.7, name: 'EN', country: 'England'},
+            {x: 74.9, y: 181.2, z: 57.3, name: 'FR', country: 'France'},
+            {x: 78.6, y: 183.7, z: 56.9, name: 'DE', country: 'Germany'},
+            {x: 72.6, y: 178.2, z: 62, name: 'GH', country: 'Ghana'},
+            {x: 77.2, y: 183.4, z: 56.5, name: 'GR', country: 'Greece'},
+            {x: 76.5, y: 180.4, z: 64.5, name: 'HO', country: 'Honduras'},
+            {x: 77.8, y: 181.6, z: 59.8, name: 'IR', country: 'Iran'},
+            {x: 75.7, y: 182.4, z: 56.3, name: 'IT', country: 'Italy'},
+            {x: 75.3, y: 181.2, z: 63.7, name: 'IC', country: 'Ivory Coast'},
+            {x: 71.6, y: 177.6, z: 51, name: 'JP', country: 'Japan'},
+            {x: 73.8, y: 181.0, z: 52.9, name: 'KR', country: 'Korea Republic'},
+            {x: 73.0, y: 177.0, z: 56.3, name: 'MX', country: 'Mexico'},
+            {x: 76.2,y: 183.0,  z: 58.2, name: 'NE', country: 'Netherlands'},
+            {x: 76.8, y: 181.3, z: 62.4, name: 'NI', country: 'Nigeria'},
+            {x: 74.7, y: 180.8, z: 61.3, name: 'PO', country: 'Portugal'},
+            {x: 75.6, y: 182.4, z: 54.1, name: 'RU', country: 'Russia'},
+            {x: 73.9, y: 180.5, z: 59.8, name: 'SP', country: 'Spain'},
+            {x: 76.9, y: 182.7, z: 53.3, name: 'SW', country: 'Switzerland'},
+            {x: 77.3, y: 182.2, z: 51.3, name: 'US', country: 'United States'},
+            {x: 75.1, y: 180.0, z: 59.7, name: 'UR', country: 'Uruguay'}
+        ]
+    }]
+
+});
+</script>
+<script>
+Highcharts.chart('bar', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Qualified Countries vs Number of players'
+    },
+    subtitle: {
+        text: 'Source: fifaindex'
+    },
+    xAxis: {
+        categories: ['Algeria', 'Argentina', 'Australia', 'Belgium', 
+                     'Bosnia Herzegovina', 'Brazil', 'Cameroon', 'Chile', 
+                     'Colombia', 'Costa Rica', 'Croatia', 'Ecuador', 
+                     'England', 'France', 'Germany', 'Ghana', 'Greece', 
+                     'Honduras', 'Iran', 'Italy', 'Ivory Coast', 'Japan', 
+                     'Korea Republic', 'Mexico', 'Netherlands', 'Nigeria', 
+                     'Portugal', 'Russia', 'Spain', 'Switzerland', 
+                     'United States', 'Uruguay'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'No. Players',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' players'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Players',
+        data: [50, 1097, 234, 265, 52, 921, 96, 398, 592, 30, 116, 34, 1618, 974, 689, 119, 86, 16, 11, 751, 90, 471, 321, 341, 426, 122, 360, 309, 1008, 210, 332, 153]
+    }]
+});
+</script>
+</body>
+</html>
+
