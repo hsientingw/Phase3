@@ -3,10 +3,14 @@
   <head>
 	  <meta charset="utf-8" />
     <title>Pivot Table Generator</title>
-    <script src="jquery.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
     
 h1 {
+  font-weight:bold;
   text-align: center;
 }
 
@@ -28,134 +32,249 @@ td:first-child {
 
 table.center {
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 2%;
+	width: 80%;
+}
+
+#id-log {
+    margin-left: auto;
+	margin-right: auto;
+}
+
+input.center {
+    float:right;
+	margin-right:46%;
 }
 
 div.bins {
   display:none;
 }
 
+div.filter {
+  display:none;
+}
+
+.form-control {
+  width: 30%;
+}
+
+#output_options_hide {
+  display:none;
+}
+
+.scrolling {
+	overflow-x: scroll;
+	height: 100%;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+
+.scrolling > .body {
+	/*noinspection CssInvalidPropertyValue*/
+	width: -webkit-fit-content;
+	overflow-y: scroll;
+	flex: 1;
+	-webkit-flex: 1;
+}
+th, td {
+	min-width: 150px;
+}
+/* an outside constraint to react against */
+.container {
+  width: 90%;
+  height: 400px;
+  display:none;
+}
+
+thead th {
+  background-color: #cccccc;
+  text-align:center;
+}
+
+.mycontent td {
+  text-align:center;
+}
+
+#error {
+  text-align:center;
+}
+
     
     </style>
   </head>
   <body>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">FIFA ULTIMATE</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li><a href="#">Home</a></li>
+		  <li class="active"><a href="#">Pivot Table Builder</a></li>
+		  <li><a href="#">Interesting findings</a></li>
+		  <li><a href="#">Visualisations</a></li>
+		</ul>
+	  </div>
+	</nav>
     <h1>Pivot Table Builder</h1>
 	<h2>Generate your own pivot tables</h2>
-    <form id="ajax-form">
+    <form id="ajax-form" class="form-group">
       <table class="center">
         <tr>
           <td><h3><label for="expression">Row Headings</label></h3>
 		    Heading:
 		    <br>
-			<select id="row_heading">
+			<select id="row_heading" class="form-control">
 			  <option value="nom">Nationality</option>
-			  <option value="nom">Club Position</option>
+			  <option value="nom">Club</option>
+			  <option value="nom">Position</option>
 			  <option value="num">Rating</option>
 			  <option value="num">Height</option>
 			</select>
 			<br>
 			Order: (numeric/alphabetic)
 			<br>
-            <select id="menu2">
+            <select id="menu2" class="form-control">
 			  <option>Ascending</option>
 			  <option>Descending</option>
 			</select>
 			<br>
-			<div class="bins">
+			<div class="bins" id="bin1">
 			Bin size:
 			<br>
-            <select id="menu3">
-			  <option>a</option>
-			  <option>b</option>
-			  <option>c</option>
-			  <option>d</option>
+            <select id="menu3" class = "form-control">
+			  <option>1</option>
+			  <option>2</option>
+			  <option>3</option>
+			  <option>4</option>
+			  <option>5</option>
 			</select>
 			<br>
 			</div>
 		  </td>
           <td>
 		    <h3><label for="expression2">Column Headings</label></h3>
+			Heading
 			<br>
-            <select id="menu4">
-			  <option>a</option>
-			  <option>b</option>
-			  <option>c</option>
-			  <option>d</option>
+            <select id="column_heading" class = "form-control">
+			  <option value="nom">Nationality</option>
+			  <option value="nom">Club</option>
+			  <option value="nom">Position</option>
+			  <option value="num">Rating</option>
+			  <option value="num">Height</option>
 			</select>
 			<br>
-            <select id="menu5">
-			  <option>a</option>
-			  <option>b</option>
-			  <option>c</option>
-			  <option>d</option>
+			Order(numeric/alphabetic)
+			<br>
+            <select id="menu5" class = "form-control">
+			  <option>Ascending</option>
+			  <option>Descending</option>
 			</select>
 			<br>
-            <select id="menu6">
-			  <option>a</option>
-			  <option>b</option>
-			  <option>c</option>
-			  <option>d</option>
+			<div class="bins" id="bin2">
+			Bin size:
+			<br>
+            <select id="menu6" class="form-control">
+			  <option>1</option>
+			  <option>2</option>
+			  <option>3</option>
+			  <option>4</option>
+			  <option>5</option>
 			</select>
 			<br>
+			</div>
           </td>
         </tr>
 		<tr>
+		  <td>
+		    <h3><label for="expression2">Output aggregation</label></h3>
+            <select id="output_method" class="form-control">
+			  <option value="no">count</option>
+			  <option value="yes">average</option>
+			  <option value="yes">sum</option>
+			  <option value="yes">max</option>
+			  <option value="yes">min</option>
+			</select>
+			<br>
+			<div id = "output_options_hide">
+			of
+			<br><br>
+			<select id="output_options" class="form-control">
+			  <option>Rating</option>
+			  <option>Position</option>
+			  <option>Curve</option>
+			  <option>gk_reflexes</option>
+			  <option>Accuracy</option>
+			</select>
+          </td>
+		  </div>
           <td><h3><label for="expression">Filters</label></h3>
-			League
+			Filter 1
 			<br>
-			<select id="league">
-			  <option>Everything</option>
-			  <option>English Premier league</option>
-			  <option>League2</option>
-			  <option>League3</option>
-			  <option>League4</option>
+			<select id="filter1" class="form-control">
+			  <option value="no">No Filter</option>
+			  <option value="yes">Club</option>
+			  <option value="yes">Position</option>
+			  <option value="yes">Weight</option>
+			  <option value="yes">Height</option>
 			</select>
 			<br>
-			<select id="menu8">
-			  <option>a</option>
-			  <option>b</option>
-			  <option>c</option>
-			  <option>d</option>
-			</select>
-			<br>
-            <select id="menu9">
+			<div class="filter" id="filter1_hide">
+            <select id="menu9" class="form-control">
 			  <option>=</option>
-			  <option>&lt;</option>
-			  <option>&gt;</option>
 			  <option>&lt;=</option>
 			  <option>&gt;=</option>
 			  <option>includes</option>
 			</select>
-			<br>
-			Filter terms
             <br>
-			<input name="filter_terms" id="filter_terms">
+			<input id="filter_terms1" class="form-control">
 			<br>
-		  </td>
-          <td>
-		    <h3><label for="expression2">Output format</label></h3>
+			Layout when using "includes":
 			<br>
-            <select id="menu11">
-			  <option>avaerage</option>
-			  <option>sum</option>
-			  <option>mean</option>
-			  <option>median</option>
+			term1,term2,...etc
+			<br><br>
+			Filter 2
+			<br>
+			<select id="filter2" class="form-control">
+			  <option value="no">No Filter</option>
+			  <option value="yes">Club</option>
+			  <option value="yes">Position</option>
+			  <option value="yes">Weight</option>
+			  <option value="yes">Height</option>
 			</select>
 			<br>
-          </td>
+			<div class="filter" id="filter2_hide">
+            <select id="menu10" class="form-control">
+			  <option>=</option>
+			  <option>&lt;=</option>
+			  <option>&gt;=</option>
+			  <option>includes</option>
+			</select>
+            <br>
+			<input id="filter_terms2" class="form-control">
+			<br>
+			Layout when using "includes":
+			<br>
+			term1,term2,...etc
+			<br>
+			</div>
+			</div>
+		  </td>
         </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-            <input type="submit" name="evaluate" id="evaluate" value="Evaluate">
-          </td>
-        </tr>
-        <tr>
-          <td>Logs</td>
-          <td>
-            <table id="id-log" name="log"></table>
-          </td>
-        </tr>
+	  </table>
+	    <br>
+            <input type="submit" name="evaluate" id="evaluate" value="Generate" class="center btn btn-lg btn-success">
+        <br><br><br>
+			<div id="error">Error! Please check your input!</div>
+            <div class="container" id="container"><div class="scrolling">
+			<table id="id-log" class="header"></table>
+			<div class="body">
+			<table id="body"></table>
+			</div>
+			</div></div>
+	  <table class="center">
         <tr>
           <td>Ajax Raw Message</td>
           <td>
@@ -168,12 +287,21 @@ div.bins {
     
 function ajaxRequest(e) {
   var responseType = 'json';
-  var select1 = $("#row_heading option:selected").text();
-  var select2 = $("#menu2 option:selected").text();
-  var select3 = $("#menu3 option:selected").text();
-  var select4 = $("#menu4 option:selected").text();
-  //var expression = $('input[name=expression]').val();
-  var expression = select1 + " " + select2 + " " + select3 + " " + select4;
+  var expression = $("#row_heading option:selected").text();
+  expression += "+" + $("#menu2 option:selected").text();
+  expression += "+" + $("#menu3 option:selected").text();
+  expression += "+" + $("#column_heading option:selected").text();
+  expression += "+" + $("#menu5 option:selected").text();
+  expression += "+" + $("#menu6 option:selected").text();
+  expression += "+" + $("#output_options option:selected").text();
+  expression += "+" + $("#output_method option:selected").text();
+  expression += "+" + $("#filter1 option:selected").text();
+  expression += "+" + $("#menu9 option:selected").text();
+  expression += "+" + $("#filter_terms1").val();
+  expression += "+" + $("#filter2 option:selected").text();
+  expression += "+" + $("#menu10 option:selected").text();
+  expression += "+" + $("#filter_terms2").val();
+
   var requestType = 'application/json';
   var formData = $('#ajax-form').serializeArray();
   var requestData = {
@@ -190,14 +318,31 @@ function ajaxRequest(e) {
 	  console.log("function ran");
 	  var data = responseData;
 	  console.log(data);
-	  temp = "";
-		for(i = 0; i < data.length; i++) {
-			temp+= "<tr><td>" + data[i].id + "</td>";
-			temp+= "<td>" + data[i].name+ "</td>";
-			temp+= "<td>" + data[i].category + "</td>";
-			temp+= "<td>" + data[i].color + "</td></tr>";
+	  if (data[0].success == "error"){
+	  $("#error").show();
+	  $("#container").hide();} 
+	  else {
+	  row_width = data[0].width;
+	  head = "<thead>";
+	    for(j = 0; j < row_width*2; j+=2) {
+		    head+= '<th class="pivot_heading">' + data[1].content[j] + "</th>";
 		};
-	  $("#id-log").html(temp);
+		head += "</thead>";
+		$("#id-log").html(head);
+		console.log("j");
+		temp = '<tbody class="mycontent">';
+		for(i = 2; i < data.length; i++) {
+            console.log(temp);
+			temp += '<tr><th style="background-color:'+data[i]["content"][1]+'">' + data[i]["content"][0] + "</th>";
+			for(j =2; j < row_width*2; j+=2) {
+				temp += '<td class="pivot_data" style="background-color:' + data[i].content[j+1]+'">'+data[i].content[j]+"</td>";
+			};
+			temp += "</tr>";
+		};
+		temp += "</tbody>";
+	  $("#body").html(temp);
+	  $("#error").hide();
+	  $("#container").show();}
       // process result in xml 
       //expression = $(responseData).find('expression').text();
       //result = $(responseData).find('result').text();
@@ -216,16 +361,55 @@ $(document).ready(
   });
 
 $("#row_heading").on("change",function(){
-    $("div.bins").hide();
+    $("#bin1").hide();
 	var val = $("#row_heading option:selected").val();
 	console.log(val);
 	if (val == "num"){
-	  $("div.bins").show();
+	  $("#bin1").show();
+	};
+});
+
+$("#column_heading").on("change",function(){
+    $("#bin2").hide();
+	var val = $("#column_heading option:selected").val();
+	console.log(val);
+	if (val == "num"){
+	  $("#bin2").show();
+	};
+});
+
+$("#filter1").on("change",function(){
+    $("#filter1_hide").hide();
+	var val = $("#filter1 option:selected").val();
+	console.log(val);
+	if (val == "yes"){
+	  $("#filter1_hide").show();
+	};
+});
+
+$("#filter2").on("change",function(){
+    $("#filter2_hide").hide();
+	var val = $("#filter2 option:selected").val();
+	console.log(val);
+	if (val == "yes"){
+	  $("#filter2_hide").show();
+	};
+});
+
+$("#output_method").on("change",function(){
+    $("#output_options_hide").hide();
+	var val = $("#output_method option:selected").val();
+	console.log(val);
+	if (val == "yes"){
+	  $("#output_options_hide").show();
 	};
 });
 
 
 
     </script>
+  <footer class="container-fluid text-center" style="background-color : white;">
+  <p>Footer Text</p>
+  </footer>
   </body>
 </html>
