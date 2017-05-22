@@ -14,25 +14,45 @@
 <style type="text/css">
 h1, h2 {
   text-align: center;
+  color: white;
 }
 
 .box {
   vertical-align: top;
+  padding-left: 5%;
 }
 
 .chart {
   width: 50%;
+  padding-right: 5%;
+}
+
+#heading {
+  background-color: rgba(55,94,151, 1);
 }
 
 .chart_table {
-  width: 95%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+#box1 {
+  color: white;
+}
+
+#box2 {
+  background-color:#FFBB00; 
+}
+
+#box3 {
+  background-color:#228b22;
 }
 
 </style>
 </head>
 <body>
+<div id="heading">
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 		<div class="navbar-header">
@@ -46,11 +66,13 @@ h1, h2 {
 		</ul>
 	  </div>
 	</nav>
+
 <h1>Interesting Findings from the FIFA dataset</h1>
 <h2>interesting facts</h2>
+
 <table class="chart_table">
 <tr>
-<td class="box">
+<td class="box" id="box1" style="color: white">
 <h3>Physicality of players is the most important quality</h3>
 <p>Out of the 31 countries qualified for the 2014 Fifa World Cup, 
 a player's physical attribute is the most important quality, it takes into
@@ -64,7 +86,8 @@ of the countries qualified, with a maximum score of only 49.9</p>
 </td>
 </tr>
 </table>
-<table class="chart_table">
+</div>
+<table class="chart_table" id="box2">
 <tr>
 <td class="box">
 <h3>bubble chart</h3>
@@ -75,7 +98,7 @@ of the countries qualified, with a maximum score of only 49.9</p>
 </td>
 </tr>
 </table>
-<table class="chart_table">
+<table class="chart_table" id="box3">
 <tr>
 <td class="box">
 <h3>barchart</h3>
@@ -91,11 +114,15 @@ of the countries qualified, with a maximum score of only 49.9</p>
 Highcharts.chart('container', {
 
     chart: {
+		backgroundColor: 'rgba(255,255,255, 0.0)',
         type: 'boxplot'
     },
 
     title: {
-        text: 'Average Ratings of Player skills over Qualified Countries'
+        text: 'Average Ratings of Player skills over Qualified Countries',
+		style: {
+                color: 'white',
+            }
     },
 
     legend: {
@@ -103,28 +130,46 @@ Highcharts.chart('container', {
     },
 
     xAxis: {
+	
         categories: ['Ball_Skills', 'Defence', 'Mental', 'Passing', 'Physical', 'Shooting', 'Goalkeeper'],
         title: {
-            text: 'Qualities'
-        }
+            text: 'Qualities',
+            style: {
+                color: 'white',
+            }
+        },
+		labels: {
+			style:{
+				color: "white",
+			},
+		},
+
     },
 
     yAxis: {
         title: {
-            text: 'Ratings'
-        }
+            text: 'Ratings',
+			style: {
+                color: 'white',
+            }
+        },
+		labels: {
+			style:{
+				color: "white",
+			},
+		},
     },
 
     plotOptions: {
         boxplot: {
-            fillColor: '#F0F0E0',
+            fillColor: '#FFBB00',
             lineWidth: 2,
-            medianColor: '#0C5DA5',
+            medianColor: '#FFFFFF',
             medianWidth: 3,
-            stemColor: '#A63400',
+            stemColor: '#FFFFFF',
             stemDashStyle: 'dot',
             stemWidth: 1,
-            whiskerColor: '#3D9200',
+            whiskerColor: 'white',
             whiskerLength: '20%',
             whiskerWidth: 3
         }
@@ -151,7 +196,8 @@ Highcharts.chart('bubble', {
     chart: {
         type: 'bubble',
         plotBorderWidth: 1,
-        zoomType: 'xy'
+        zoomType: 'xy',
+		backgroundColor: '#FFBB00',
     },
 
     legend: {
@@ -272,7 +318,8 @@ Highcharts.chart('bubble', {
             {x: 76.9, y: 182.7, z: 53.3, name: 'SW', country: 'Switzerland'},
             {x: 77.3, y: 182.2, z: 51.3, name: 'US', country: 'United States'},
             {x: 75.1, y: 180.0, z: 59.7, name: 'UR', country: 'Uruguay'}
-        ]
+        ],
+		color : "#FB6542"
     }]
 
 });
@@ -280,10 +327,15 @@ Highcharts.chart('bubble', {
 <script>
 Highcharts.chart('bar', {
     chart: {
-        type: 'bar'
+		backgroundColor: 'rgba(255,255,255, 0.0)',
+        type: 'bar',
+		
     },
     title: {
-        text: 'Qualified Countries vs Number of players'
+        text: 'Qualified Countries vs Number of players',
+		style: {
+                color: 'white',
+            }
     },
     subtitle: {
         text: 'Source: fifaindex'
@@ -299,17 +351,28 @@ Highcharts.chart('bar', {
                      'United States', 'Uruguay'],
         title: {
             text: null
-        }
+        },
+		labels: {
+			style: {
+                color: 'white',
+            },
+        },
     },
     yAxis: {
         min: 0,
         title: {
             text: 'No. Players',
-            align: 'high'
+            align: 'high',
+			style: {
+                color: 'white',
+            }
         },
         labels: {
-            overflow: 'justify'
-        }
+            overflow: 'justify',
+			style: {
+                color: 'white',
+            },
+        },
     },
     tooltip: {
         valueSuffix: ' players'
@@ -337,7 +400,8 @@ Highcharts.chart('bar', {
     },
     series: [{
         name: 'Players',
-        data: [50, 1097, 234, 265, 52, 921, 96, 398, 592, 30, 116, 34, 1618, 974, 689, 119, 86, 16, 11, 751, 90, 471, 321, 341, 426, 122, 360, 309, 1008, 210, 332, 153]
+        data: [50, 1097, 234, 265, 52, 921, 96, 398, 592, 30, 116, 34, 1618, 974, 689, 119, 86, 16, 11, 751, 90, 471, 321, 341, 426, 122, 360, 309, 1008, 210, 332, 153],
+		color: "#FFBB00"
     }]
 });
 </script>
