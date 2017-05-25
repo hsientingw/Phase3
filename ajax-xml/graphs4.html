@@ -98,7 +98,7 @@ p {
         <td class="box">
             <h3>Higher rated countries tend to have higher average age</h3>
             <p>As we can see from the bubble chart, representing number of players (size), over rating (vertical) and age (horizontal), the top left corner represents a younger group with higher ratings, including Germany, Iran, Greece, Belgium, Netherlands. This could indicate more potential for the future. The bottom right corners we see an older group with lower ratings, such as Japan, Korea and Mexico. The countries to the right tend to have higher ratings, which is probably because players that are doing well in their career will continue for longer, for example, Brazil, Algeria. Conversely, countries on the bottom left, such as England and Australia, may have shorter career span. However, (for England) this could also be due to having a large number of players diluting the high scoring players. </p>
-	</td>
+        </td>
         <td class="chart">
             <div id="BubbleChart" style="height: 400px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
         </td>
@@ -109,8 +109,8 @@ p {
     <tr>
         <td class="box" style="color: white">
             <h3>England has the most players registered with FIFA</h3>
-            <p>Out of the 32 FIFA world cup qualified countries, England has the most number of players with 1618, which is around 600 players more then the next most Argentina and Spain. Iran is the country with the least amount of players with only 11, next up is Honduras with 16. This can be explained by the number of leagues in each country and also their population.</p>
-            </td>
+            <p>Out of the 32 FIFA world cup qualified countries, England has the most number of players with 1618, which is around 600 players more then the next most Argentina and Spain. Iran is the country with the least amount of players with only 11, next up is Honduras with 16. This can be explained by the number of leagues in each country and also their population. </p>
+        </td>
         <td class="chart">
             <div id="BarChart" style="min-width: 310px; max-width: 800px; height: 600px; margin: 0 auto"></div>
         </td>
@@ -134,7 +134,7 @@ p {
         <td class="box" style="color: white">
             <h3>Africa is the highest continent in player skills</h3>
             <p>Overall, Africa and South America has the highest ratings with 68.3 and 68.1. The lowest out of 6 continents is Oceania with an overall rating of 62.4. In terms of individual skills, again Africa has the highest rating for every skills other than mental, which includes aggression, reactions, vision..etc.  The overall worst performed skill, defence, is done the best by Europe and North America and worst by Asia. The overall best performed skill, physical, is best in Africa and North America, worst in Oceania. Similarly with shooting skills. </p>
-	</td>
+        </td>
         <td class="chart">
             <div id="ColumnGraph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </td>
@@ -202,10 +202,10 @@ Highcharts.chart('BoxPlot', {
         data: [
             [50, 56, 58, 60.8, 68],
             [36, 45, 46.8, 47.9, 49.9],
-            [48.6, 52.7, 54.4, 56.4, 60.6],
+            [49.2, 52.9, 55.1, 56.8, 61.1],
             [48.1, 52.3, 54.5, 56.6, 64.6],
             [62.3, 63.9, 64.8, 66.5, 71.5],
-            [42, 47, 49.9, 51.9, 58.1],
+            [37.3, 41.8, 44.4, 46.1, 51.7],
             [10.5, 15.4, 16.5, 18.5, 20.3]
         ]
     }]
@@ -295,38 +295,38 @@ Highcharts.chart('BubbleChart', {
     },
     series: [{
         data: [
-            {x: 26.8, y: 71.62, z: 50, name: 'DZ', country: 'Algeria'},
-            {x: 26.4, y: 68.3, z: 1097, name: 'AR', country: 'Argentina'},
-            {x: 24.5, y: 65.9, z: 234, name: 'AU', country: 'Australia'},
-            {x: 24.4, y: 69.2, z: 265, name: 'BE', country: 'Belgium'},
-            {x: 26.2, y: 66.3, z: 52, name: 'BA', country: 'Bosnia Herzegovina'},
-            {x: 27.8, y: 68.7, z: 921, name: 'BR', country: 'Brazil'},
-            {x: 25.8, y: 61.7, z: 96, name: 'CM', country: 'Cameroon'},
-            {x: 25, y: 64, z: 398, name: 'CL', country: 'Chile'},
-            {x: 25.1, y: 68.3, z: 592, name: 'CO', country: 'Colombia'},
-            {x: 26.4, y: 69.6, z: 30, name: 'CR', country: 'Costa Rica'},
+            {x: 26.8, y: 71.6, z: 50, name: 'DZ', country: 'Algeria'},
+            {x: 26.4, y: 67.5, z: 1097, name: 'AR', country: 'Argentina'},
+            {x: 24.5, y: 62.4, z: 234, name: 'AU', country: 'Australia'},
+            {x: 24.4, y: 68.3, z: 265, name: 'BE', country: 'Belgium'},
+            {x: 26.2, y: 69.7, z: 52, name: 'BA', country: 'Bosnia Herzegovina'},
+            {x: 27.8, y: 70.0, z: 921, name: 'BR', country: 'Brazil'},
+            {x: 25.8, y: 68.3, z: 96, name: 'CM', country: 'Cameroon'},
+            {x: 25.0, y: 65.1, z: 398, name: 'CL', country: 'Chile'},
+            {x: 25.1, y: 65.3, z: 592, name: 'CO', country: 'Colombia'},
+            {x: 26.4, y: 69.1, z: 30, name: 'CR', country: 'Costa Rica'},
             {x: 25.1, y: 68.4, z: 116, name: 'HR', country: 'Croatia'},
-            {x: 26.7, y: 62.9, z: 34, name: 'EC', country: 'Ecuador'},
-            {x: 24.4, y: 67.5, z: 1618, name: 'GB', country: 'England'},
-            {x: 25.1, y: 68.1, z: 974, name: 'FR', country: 'France'},
-            {x: 24.7, y: 69.4, z: 689, name: 'DE', country: 'Germany'},
-            {x: 23.4, y: 67.5, z: 119, name: 'GH', country: 'Ghana'},
-            {x: 25.1, y: 68, z: 86, name: 'GR', country: 'Greece'},
-            {x: 26.1, y: 70.3, z: 16, name: 'HN', country: 'Honduras'},
-            {x: 24.8, y: 66.3, z: 11, name: 'IR', country: 'Iran'},
-            {x: 26, y: 70.2, z: 751, name: 'IT', country: 'Italy'},
-            {x: 25.3, y: 64.2, z: 90, name: 'CI', country: 'Ivory Coast'},
-            {x: 26.4, y: 69.1, z: 471, name: 'JP', country: 'Japan'},
-            {x: 26, y: 67.4, z: 321, name: 'KR', country: 'Korea Republic'},
-            {x: 25.7, y: 66.2, z: 341, name: 'MX', country: 'Mexico'},
-            {x: 24.3, y: 64.3, z: 426, name: 'NL', country: 'Netherlands'},
-            {x: 23.7, y: 62.4, z: 122, name: 'NG', country: 'Nigeria'},
-            {x: 25.7, y: 67.5, z: 360, name: 'PT', country: 'Portugal'},
-            {x: 25.5, y: 70, z: 309, name: 'RU', country: 'Russia'},
-            {x: 26, y: 65.1, z: 1008, name: 'ES', country: 'Spain'},
-            {x: 24.7, y: 65.3, z: 210, name: 'CH', country: 'Switzerland'},
-            {x: 25.2, y: 70.8, z: 332, name: 'US', country: 'United States'},
-            {x: 26.6, y: 69.5, z: 153, name: 'UY', country: 'Uruguay'},
+            {x: 26.7, y: 70.8, z: 34, name: 'EC', country: 'Ecuador'},
+            {x: 24.4, y: 62.9, z: 1618, name: 'GB', country: 'England'},
+            {x: 25.1, y: 67.5, z: 974, name: 'FR', country: 'France'},
+            {x: 24.7, y: 68.1, z: 689, name: 'DE', country: 'Germany'},
+            {x: 23.4, y: 65.9, z: 119, name: 'GH', country: 'Ghana'},
+            {x: 25.1, y: 69.5, z: 86, name: 'GR', country: 'Greece'},
+            {x: 26.1, y: 67.8, z: 16, name: 'HN', country: 'Honduras'},
+            {x: 24.8, y: 68.9, z: 11, name: 'IR', country: 'Iran'},
+            {x: 26.0, y: 67.5, z: 751, name: 'IT', country: 'Italy'},
+            {x: 25.3, y: 69.1, z: 90, name: 'CI', country: 'Ivory Coast'},
+            {x: 26.4, y: 61.8, z: 471, name: 'JP', country: 'Japan'},
+            {x: 26.0, y: 64.0, z: 321, name: 'KR', country: 'Korea Republic'},
+            {x: 25.7, y: 66.3, z: 341, name: 'MX', country: 'Mexico'},
+            {x: 24.3, y: 68.1, z: 426, name: 'NL', country: 'Netherlands'},
+            {x: 23.7, y: 66.4, z: 122, name: 'NG', country: 'Nigeria'},
+            {x: 25.7, y: 70.4, z: 360, name: 'PT', country: 'Portugal'},
+            {x: 25.5, y: 66.4, z: 309, name: 'RU', country: 'Russia'},
+            {x: 26.0, y: 70.3, z: 1008, name: 'ES', country: 'Spain'},
+            {x: 24.7, y: 64.3, z: 210, name: 'CH', country: 'Switzerland'},
+            {x: 25.2, y: 64.4, z: 332, name: 'US', country: 'United States'},
+            {x: 26.6, y: 69.6, z: 153, name: 'UY', country: 'Uruguay'}
         ]
     }]
 });
@@ -486,23 +486,23 @@ Highcharts.chart('ScatterPlot', {
         }
     },
     series: [{
-        name: 'Africa',
-        data: [[50, 71.62], [96, 68.3], [119, 65.9], [90, 69.2], [122, 66.3]]
-    }, {
-        name: 'Asia',
-        data: [[11, 68.7], [471, 61.7], [321, 64]]
-    }, {
-        name: 'Europe',
-        data: [[265.0, 68.3], [52.0, 69.6], [116.0, 68.4], [1618.0, 62.9], [974.0, 67.5], [689.0, 68.1], [86.0, 69.4], [751.0, 67.5], [426.0, 68.0], [360.0, 70.3], [309.0, 66.3], [1008.0, 70.2], [210.0, 64.2]]
-    }, {
-        name: 'North America',
-        data: [[30.0, 69.1], [16.0, 67.4], [341.0, 66.2], [332.0, 64.3]]
-    }, {
-        name: 'South America',
-        data: [[1097.0, 67.5], [921.0, 70.0], [398.0, 65.1], [592.0, 65.3], [34.0, 70.8], [153.0, 69.5]]
-    }, {
-        name: 'Oceania',
-        data: [[234.0, 62.4]]
+        name: 'Africa', 
+        data: [[50, 71.6],[96, 68.3],[119, 65.9],[90, 69.1],[122, 66.4]]
+    },{
+        name: 'Asia', 
+        data: [[11, 68.9],[471, 61.8],[321, 64.0]]
+    },{
+        name: 'Europe', 
+        data: [[265, 68.3],[52, 69.7],[116, 68.4],[1618, 62.9],[974, 67.5],[689, 68.1],[86, 69.5],[751, 67.5],[426, 68.1],[360, 70.4],[309, 66.4],[1008, 70.3],[210, 64.3]]
+    },{
+        name: 'North America', 
+        data: [[30, 69.1],[16, 67.8],[341, 66.3],[332, 64.4]]
+    },{
+        name: 'South America', 
+        data: [[1097, 67.5],[921, 70.0],[398, 65.1],[592, 65.3],[34, 70.8],[153, 69.6]]
+    },{
+        name: 'Oceania', 
+        data: [[234, 62.4]]
     }]
 });
 
@@ -572,27 +572,27 @@ Highcharts.chart('ColumnGraph', {
         }
     },
     series: [{
-        name: 'Overall',
-        data: [68, 63.3, 66.1, 65.4, 67.7, 62.5]
-    }, {
-        name: 'Ball Skills',
-        data: [62.8, 54.6, 57.3, 58.5, 58.5, 50.0]
-    }, {
-        name: 'Defence',
-        data: [45.8, 41.4, 47.0, 47.1, 46.5, 43.8]
-    }, {
-        name: 'Mental',
-        data: [56.7, 52.1, 54.3, 55.7, 54.8, 49.6]
-    }, {
-        name: 'Passing',
-        data: [56.5, 50.9, 54.7, 54.6, 55.0, 48.1]
-    }, {
-        name: 'Physical',
-        data: [69.4, 64.3, 64.0, 67.3, 65.8, 62.8]
-    }, {
-        name: 'Shooting',
-        data: [52.8, 46.4, 49.0, 50.8, 49.9, 42.0]
-    }]
+name: 'Overall', 
+data: [68.3, 64.9, 67.8, 66.9, 68.1, 62.4]
+}, {
+name: 'Ball Skills', 
+data: [62.8, 54.5, 57.3, 58.4, 58.5, 50.0]
+}, {
+name: 'Defence', 
+data: [45.8, 41.4, 47.0, 47.1, 46.5, 43.8]
+}, {
+name: 'Mental', 
+data: [57.1, 52.4, 54.7, 56.1, 55.3, 50.0]
+}, {
+name: 'Passing', 
+data: [56.5, 51.0, 54.7, 54.5, 55.0, 48.1]
+}, {
+name: 'Physical', 
+data: [69.4, 64.3, 64.0, 67.3, 65.8, 62.8]
+}, {
+name: 'Shooting', 
+data: [46.9, 41.2, 43.5, 45.1, 44.3, 37.3]
+}]
 });
 </script>
 </body>
