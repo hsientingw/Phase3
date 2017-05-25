@@ -1,0 +1,625 @@
+?([{
+"code": "AF",
+"value": 54.5,
+"name": "Afghanistan"
+},{
+"code": "AL",
+"value": 65.9,
+"name": "Albania"
+},{
+"code": "DZ",
+"value": 71.6,
+"name": "Algeria"
+},{
+"code": "AO",
+"value": 70.0,
+"name": "Angola"
+},{
+"code": "AG",
+"value": 62.5,
+"name": "Antigua & Barbuda"
+},{
+"code": "AR",
+"value": 67.5,
+"name": "Argentina"
+},{
+"code": "AM",
+"value": 70.5,
+"name": "Armenia"
+},{
+"code": "AW",
+"value": 69.0,
+"name": "Aruba"
+},{
+"code": "AU",
+"value": 62.4,
+"name": "Australia"
+},{
+"code": "AT",
+"value": 64.5,
+"name": "Austria"
+},{
+"code": "AZ",
+"value": 66.1,
+"name": "Azerbaijan"
+},{
+"code": "BB",
+"value": 67.0,
+"name": "Barbados"
+},{
+"code": "BY",
+"value": 69.6,
+"name": "Belarus"
+},{
+"code": "BE",
+"value": 68.3,
+"name": "Belgium"
+},{
+"code": "BZ",
+"value": 64.0,
+"name": "Belize"
+},{
+"code": "BJ",
+"value": 67.9,
+"name": "Benin"
+},{
+"code": "BM",
+"value": 61.0,
+"name": "Bermuda"
+},{
+"code": "BO",
+"value": 65.5,
+"name": "Bolivia"
+},{
+"code": "BA",
+"value": 69.7,
+"name": "Bosnia Herzegovina"
+},{
+"code": "BR",
+"value": 70.0,
+"name": "Brazil"
+},{
+"code": "BG",
+"value": 66.6,
+"name": "Bulgaria"
+},{
+"code": "BF",
+"value": 69.6,
+"name": "Burkina Faso"
+},{
+"code": "CM",
+"value": 68.3,
+"name": "Cameroon"
+},{
+"code": "CA",
+"value": 62.8,
+"name": "Canada"
+},{
+"code": "CV",
+"value": 69.5,
+"name": "Cape Verde"
+},{
+"code": "CF",
+"value": 67.0,
+"name": "Central African Rep."
+},{
+"code": "TD",
+"value": 74.0,
+"name": "Chad"
+},{
+"code": "CL",
+"value": 65.1,
+"name": "Chile"
+},{
+"code": "CN",
+"value": 62.3,
+"name": "China PR"
+},{
+"code": "TW",
+"value": 68.0,
+"name": "Chinese Taipei"
+},{
+"code": "CO",
+"value": 65.3,
+"name": "Colombia"
+},{
+"code": "KM",
+"value": 66.4,
+"name": "Comoros"
+},{
+"code": "CG",
+"value": 66.1,
+"name": "Congo"
+},{
+"code": "CR",
+"value": 69.1,
+"name": "Costa Rica"
+},{
+"code": "HR",
+"value": 68.4,
+"name": "Croatia"
+},{
+"code": "CU",
+"value": 73.0,
+"name": "Cuba"
+},{
+"code": "CW",
+"value": 68.3,
+"name": "Curacao"
+},{
+"code": "CY",
+"value": 63.5,
+"name": "Cyprus"
+},{
+"code": "CZ",
+"value": 71.0,
+"name": "Czech Republic"
+},{
+"code": "DK",
+"value": 63.2,
+"name": "Denmark"
+},{
+"code": "DO",
+"value": 73.5,
+"name": "Dominican Republic"
+},{
+"code": "CD",
+"value": 68.1,
+"name": "DR Congo"
+},{
+"code": "EC",
+"value": 70.8,
+"name": "Ecuador"
+},{
+"code": "EG",
+"value": 68.8,
+"name": "Egypt"
+},{
+"code": "SV",
+"value": 69.5,
+"name": "El Salvador"
+},{
+"code": "UK",
+"value": 63.3,
+"name": "England"
+},{
+"code": "GQ",
+"value": 65.5,
+"name": "Equatorial Guinea"
+},{
+"code": "ER",
+"value": 71.0,
+"name": "Eritrea"
+},{
+"code": "EE",
+"value": 66.0,
+"name": "Estonia"
+},{
+"code": "FO",
+"value": 59.8,
+"name": "Faroe Islands"
+},{
+"code": "FJ",
+"value": 67.0,
+"name": "Fiji"
+},{
+"code": "FL",
+"value": 64.2,
+"name": "Finland"
+},{
+"code": "FR",
+"value": 67.5,
+"name": "France"
+},{
+"code": "MK",
+"value": 65.0,
+"name": "FYR Macedonia"
+},{
+"code": "GA",
+"value": 70.5,
+"name": "Gabon"
+},{
+"code": "GM",
+"value": 65.1,
+"name": "Gambia"
+},{
+"code": "GE",
+"value": 66.2,
+"name": "Georgia"
+},{
+"code": "DE",
+"value": 68.1,
+"name": "Germany"
+},{
+"code": "GH",
+"value": 65.9,
+"name": "Ghana"
+},{
+"code": "GI",
+"value": 64.0,
+"name": "Gibraltar"
+},{
+"code": "GR",
+"value": 69.5,
+"name": "Greece"
+},{
+"code": "GD",
+"value": 63.0,
+"name": "Grenada"
+},{
+"code": "GU",
+"value": 69.0,
+"name": "Guam"
+},{
+"code": "GT",
+"value": 67.5,
+"name": "Guatemala"
+},{
+"code": "GN",
+"value": 67.5,
+"name": "Guinea"
+},{
+"code": "GW",
+"value": 66.2,
+"name": "Guinea Bissau"
+},{
+"code": "GY",
+"value": 64.0,
+"name": "Guyana"
+},{
+"code": "HT",
+"value": 65.1,
+"name": "Haiti"
+},{
+"code": "HN",
+"value": 67.8,
+"name": "Honduras"
+},{
+"code": "HU",
+"value": 68.7,
+"name": "Hungary"
+},{
+"code": "IS",
+"value": 66.7,
+"name": "Iceland"
+},{
+"code": "IN",
+"value": 57.9,
+"name": "India"
+},{
+"code": "IR",
+"value": 68.9,
+"name": "Iran"
+},{
+"code": "IQ",
+"value": 67.5,
+"name": "Iraq"
+},{
+"code": "IL",
+"value": 69.2,
+"name": "Israel"
+},{
+"code": "IT",
+"value": 67.5,
+"name": "Italy"
+},{
+"code": "CI",
+"value": 69.1,
+"name": "Ivory Coast"
+},{
+"code": "JM",
+"value": 66.5,
+"name": "Jamaica"
+},{
+"code": "JP",
+"value": 61.8,
+"name": "Japan"
+},{
+"code": "KZ",
+"value": 65.5,
+"name": "Kazakhstan"
+},{
+"code": "KE",
+"value": 66.2,
+"name": "Kenya"
+},{
+"code": "KP",
+"value": 63.0,
+"name": "Korea DPR"
+},{
+"code": "KR",
+"value": 64.0,
+"name": "Korea Republic"
+},{
+"code": "XK",
+"value": 66.7,
+"name": "Kosovo"
+},{
+"code": "KW",
+"value": 70.0,
+"name": "Kuwait"
+},{
+"code": "LV",
+"value": 65.3,
+"name": "Latvia"
+},{
+"code": "LB",
+"value": 64.0,
+"name": "Lebanon"
+},{
+"code": "LS",
+"value": 61.0,
+"name": "Lesotho"
+},{
+"code": "LR",
+"value": 63.3,
+"name": "Liberia"
+},{
+"code": "LY",
+"value": 63.5,
+"name": "Libya"
+},{
+"code": "LI",
+"value": 61.9,
+"name": "Liechtenstein"
+},{
+"code": "LT",
+"value": 63.5,
+"name": "Lithuania"
+},{
+"code": "LU",
+"value": 64.0,
+"name": "Luxembourg"
+},{
+"code": "MG",
+"value": 66.0,
+"name": "Madagascar"
+},{
+"code": "ML",
+"value": 67.2,
+"name": "Mali"
+},{
+"code": "MT",
+"value": 60.8,
+"name": "Malta"
+},{
+"code": "MR",
+"value": 64.6,
+"name": "Mauritania"
+},{
+"code": "MU",
+"value": 68.0,
+"name": "Mauritius"
+},{
+"code": "MX",
+"value": 66.3,
+"name": "Mexico"
+},{
+"code": "MD",
+"value": 68.8,
+"name": "Moldova"
+},{
+"code": "ME",
+"value": 69.3,
+"name": "Montenegro"
+},{
+"code": "MS",
+"value": 64.3,
+"name": "Montserrat"
+},{
+"code": "MA",
+"value": 70.3,
+"name": "Morocco"
+},{
+"code": "MZ",
+"value": 68.8,
+"name": "Mozambique"
+},{
+"code": "NA",
+"value": 61.0,
+"name": "Namibia"
+},{
+"code": "NL",
+"value": 68.1,
+"name": "Netherlands"
+},{
+"code": "NZ",
+"value": 62.8,
+"name": "New Zealand"
+},{
+"code": "NE",
+"value": 68.5,
+"name": "Niger"
+},{
+"code": "NG",
+"value": 66.4,
+"name": "Nigeria"
+},{
+"code": "NO",
+"value": 62.6,
+"name": "Norway"
+},{
+"code": "OM",
+"value": 71.0,
+"name": "Oman"
+},{
+"code": "PK",
+"value": 60.0,
+"name": "Pakistan"
+},{
+"code": "PS",
+"value": 63.5,
+"name": "Palestine"
+},{
+"code": "PA",
+"value": 65.8,
+"name": "Panama"
+},{
+"code": "PG",
+"value": 61.0,
+"name": "Papua New Guinea"
+},{
+"code": "PY",
+"value": 70.3,
+"name": "Paraguay"
+},{
+"code": "PE",
+"value": 68.3,
+"name": "Peru"
+},{
+"code": "PH",
+"value": 65.0,
+"name": "Philippines"
+},{
+"code": "PL",
+"value": 64.3,
+"name": "Poland"
+},{
+"code": "PT",
+"value": 70.4,
+"name": "Portugal"
+},{
+"code": "PR",
+"value": 66.0,
+"name": "Puerto Rico"
+},{
+"code": "QA",
+"value": 66.0,
+"name": "Qatar"
+},{
+"code": "IE",
+"value": 59.6,
+"name": "Republic of Ireland"
+},{
+"code": "RO",
+"value": 68.9,
+"name": "Romania"
+},{
+"code": "RU",
+"value": 66.4,
+"name": "Russia"
+},{
+"code": "SM",
+"value": 54.0,
+"name": "San Marino"
+},{
+"code": "SA",
+"value": 60.9,
+"name": "Saudi Arabia"
+},{
+"code": "SN",
+"value": 68.5,
+"name": "Senegal"
+},{
+"code": "RS",
+"value": 69.7,
+"name": "Serbia"
+},{
+"code": "ST",
+"value": 74.0,
+"name": "Sao Tome and Principe"
+},{
+"code": "SL",
+"value": 65.7,
+"name": "Sierra Leone"
+},{
+"code": "SK",
+"value": 66.7,
+"name": "Slovakia"
+},{
+"code": "SI",
+"value": 68.8,
+"name": "Slovenia"
+},{
+"code": "SO",
+"value": 64.0,
+"name": "Somalia"
+},{
+"code": "ZA",
+"value": 67.9,
+"name": "South Africa"
+},{
+"code": "ES",
+"value": 70.3,
+"name": "Spain"
+},{
+"code": "KN",
+"value": 64.3,
+"name": "St Kitts Nevis"
+},{
+"code": "LC",
+"value": 62.0,
+"name": "St Lucia"
+},{
+"code": "SR",
+"value": 68.8,
+"name": "Suriname"
+},{
+"code": "SE",
+"value": 63.9,
+"name": "Sweden"
+},{
+"code": "CH",
+"value": 64.3,
+"name": "Switzerland"
+},{
+"code": "SY",
+"value": 70.8,
+"name": "Syria"
+},{
+"code": "TJ",
+"value": 66.5,
+"name": "Tanzania"
+},{
+"code": "TZ",
+"value": 63.0,
+"name": "Timor-Leste"
+},{
+"code": "TG",
+"value": 71.0,
+"name": "Togo"
+},{
+"code": "TT",
+"value": 66.3,
+"name": "Trinidad & Tobago"
+},{
+"code": "TN",
+"value": 68.5,
+"name": "Tunisia"
+},{
+"code": "TR",
+"value": 67.8,
+"name": "Turkey"
+},{
+"code": "UG",
+"value": 62.9,
+"name": "Uganda"
+},{
+"code": "UA",
+"value": 69.0,
+"name": "Ukraine"
+},{
+"code": "US",
+"value": 64.4,
+"name": "United States"
+},{
+"code": "UY",
+"value": 69.6,
+"name": "Uruguay"
+},{
+"code": "UZ",
+"value": 68.0,
+"name": "Uzbekistan"
+},{
+"code": "VE",
+"value": 69.2,
+"name": "Venezuela"
+},{
+"code": "ZM",
+"value": 69.5,
+"name": "Zambia"
+},{
+"code": "ZW",
+"value": 66.2,
+"name": "Zimbabwe"
+}]);
